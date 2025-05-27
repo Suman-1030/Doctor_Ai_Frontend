@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Nav from './Nav';
 import '../App.css';
 import Chat from './Chat';
-import Banner from './banner';
+import Banner from './Banner'
 import DoctorFooter from './DoctorFooter';
 import Otp from './Otp';
 import Test from './test';
