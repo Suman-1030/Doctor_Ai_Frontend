@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import Nav from './Nav';
 import '../App.css';
 import Chat from './Chat';
-import Banner from './Banner'
 import DoctorFooter from './DoctorFooter';
-import Otp from './Otp';
-import Test from './test';
+
 import Register from './Register';
 import Login from './Login';
 import BeforeLogin from './BeforeLogin';
+
+import Banner from './Banner';
 
 
 
@@ -98,10 +98,11 @@ useEffect(()=>{
          
                     {showRegister && <Register />}
                     {showLogin && <Login />}
-         
+                   
           
 
       {afterLogin && <div>  
+              
              <Banner childprompt={childprompt}/>
              <div><Chat setChatHistory={setChatHistory} handlehistory={handlehistory} /></div>
              <DoctorFooter/>
