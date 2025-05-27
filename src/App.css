@@ -1,0 +1,586 @@
+/* Reset body margin/padding if needed */
+
+/* Nav.css */
+/* Main nav bar container */
+.nav {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Flex container for nav content */
+.navcontent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo styling */
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Auth container */
+.auth {
+  display: flex;
+  align-items: center;
+}
+
+/* Login/Signup links */
+.beforelogin .auth-link {
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.beforelogin .auth-link:hover {
+  color: #000;
+}
+
+/* After login section */
+.afterlogin {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* User info and dropdown */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: white;
+  padding: 6px 10px;
+  border-radius: 30px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.user h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.user select {
+  border: none;
+  background: #f0f0f0;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  width: 10px;
+  height: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.user option{
+  width: 150px;
+}
+
+.user select:hover {
+  background: #e0e0e0;
+}
+
+/* Share button */
+.afterlogin button {
+  background: white;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease;
+}
+
+.afterlogin button:hover {
+  transform: scale(1.1);
+}
+
+
+.chat {
+  margin-top: 80px;
+  min-height: 20vh; 
+  height: auto;          /* starts small */
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f7fa;
+  position: relative;
+  flex-grow: 1;               /* allows it to grow */
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  
+
+}
+
+
+
+.msg {
+  margin-top: 50px;
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-sizing: border-box;
+  margin-bottom: 80px;
+  scroll-behavior: smooth; /* 👈 this enables smooth scroll */
+}
+
+.bubble {
+  max-width: 90%;
+  padding: 14px 18px;
+  border-radius: 16px;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  font-size: 16px;
+  line-height: 1.5;
+  
+}
+
+.bubble.user {
+  background-color: #d0f0ff;
+  align-self: flex-end;
+}
+
+.bubble.assistant {
+  background-color: #e8ebf0;
+  align-self: flex-start;
+}
+
+
+.banner {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+/* footer  */
+.doctor-footer {
+  background-color: #f8f8f8;
+  color: #333;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  width: 100%;
+  
+  margin-top: 300px;
+}
+
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-brand h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #007BFF;
+}
+
+.footer-brand p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.footer-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-disclaimer {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 12px;
+  color: #777;
+}
+/* OTP AUthentication */
+
+/* Modal background */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* dark transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal box */
+.modal {
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+}
+
+/* OTP input container */
+.otp .password {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* Each OTP input */
+.otp input {
+  width: 40px;
+  height: 50px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s;
+}
+
+.otp input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Close button */
+.modal button {
+  margin-top: 10px;
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal button:hover {
+  background-color: #0056b3;
+}
+
+/* register form */
+/* Center the form using flexbox */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.Register {
+  margin-bottom: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* full viewport height */
+  background-color: #f0f2f5;
+  position: relative;
+}
+
+.Register form {
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.Register h2 {
+  position: absolute;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  top: 130px;
+}
+
+.Register input[type='text'],
+.Register input[type='email'],
+.Register input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.Register input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.Register label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+  font-size: 14px;
+  color: #444;
+}
+
+.Register button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.Register button:hover {
+  background-color: #0056b3;
+}
+
+/* OTP Modal */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+}
+
+.modal h3 {
+  margin-bottom: 20px;
+}
+
+/* Login */
+
+/* Login container */
+.login {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Form heading */
+.login h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Inputs and buttons */
+.login input[type='text'],
+.login input[type='email'],
+.login input[type='password'] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login button:hover {
+  background-color: #0056b3;
+}
+
+/* Checkbox styling */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: #333;
+}
+
+/* Modal styles (reuse if already in your CSS) */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+/* responsiveness */
+
+@media (max-width: 576px) {
+  .nav{
+    border:2px solid red;
+  }
+  .form.centered {
+    width: 90% !important; /* adjust width */
+    margin-left: auto !important; /* center horizontally */
+    margin-right: auto !important;
+    padding: 8px 12px;
+  }
+  
+  .form.centered input[type="text"],
+  .form.centered input[type="file"],
+  .form.centered button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+  
+  .form.centered input[type="file"] {
+    width: 90px;
+  }
+  
+  /* Same for fixed-bottom if needed */
+  .form.fixed-bottom {
+    width: 90% !important;
+    margin-left: 30px !important;
+    margin-right: auto !important;
+    padding: 8px 12px;
+  }
+
+  .form.fixed-bottom input[type="text"],
+  .form.fixed-bottom input[type="file"],
+  .form.fixed-bottom button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .form.fixed-bottom input[type="file"] {
+    width: 90px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .nav{
+    border:2px solid red;
+  }
+  .form.centered{
+    width: 90% !important;
+    margin-left: 0px !important;
+    margin-right: auto !important;
+    padding: 10px 14px;
+  }
+  .form.fixed-bottom {
+    width: 90% !important;
+    margin-left: 40px !important;
+    margin-right: auto !important;
+    padding: 10px 14px;
+  }
+
+  .form.centered input[type="text"],
+  .form.fixed-bottom input[type="text"],
+  .form.centered input[type="file"],
+  .form.fixed-bottom input[type="file"],
+  .form.centered button,
+  .form.fixed-bottom button {
+    font-size: 13px;
+    padding: 7px 10px;
+  }
+
+  .form.centered input[type="file"],
+  .form.fixed-bottom input[type="file"] {
+    width: 100px;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 576px) {
+  .form.centered,
+  .form.fixed-bottom {
+    width: 95% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 8px 12px;
+  }
+
+  .form.centered input[type="text"],
+  .form.fixed-bottom input[type="text"],
+  .form.centered input[type="file"],
+  .form.fixed-bottom input[type="file"],
+  .form.centered button,
+  .form.fixed-bottom button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .form.centered input[type="file"],
+  .form.fixed-bottom input[type="file"] {
+    width: 90px;
+  }
+}
+
