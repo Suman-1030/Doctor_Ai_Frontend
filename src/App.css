@@ -483,9 +483,7 @@ body, html {
 /* responsiveness */
 
 @media (max-width: 576px) {
-  .nav{
-    border:2px solid red;
-  }
+ 
   .form.centered {
     width: 90% !important; /* adjust width */
     margin-left: auto !important; /* center horizontally */
@@ -526,9 +524,7 @@ body, html {
 
 /* Tablets */
 @media (max-width: 768px) {
-  .nav{
-    border:2px solid red;
-  }
+  
   .form.centered{
     width: 90% !important;
     margin-left: 0px !important;
@@ -563,9 +559,9 @@ body, html {
   .form.centered,
   .form.fixed-bottom {
     width: 95% !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding: 8px 12px;
+    margin-left: 10px !important;
+    
+    padding: 8px 20px;
   }
 
   .form.centered input[type="text"],

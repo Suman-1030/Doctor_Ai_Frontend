@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Otp from './Otp'; // Adjust path as needed
 import Nav from './Nav';
 import { Api_Path } from './Link';
+import { redirect } from 'react-router-dom';
 
-function Register() {
+function Register({Loginhandler,Registerhandler}) {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -52,6 +53,9 @@ catch(error){
       const Data= await Response.json()
       if(Response.ok){
         alert('SignUp Successful')
+        Loginhandler()
+        
+
       }
       if(!Response.ok){
          if(Response.status===400 && Data.msg==='User Registered already'){

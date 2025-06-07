@@ -96,7 +96,7 @@ useEffect(()=>{
        <Nav Registerhandler={Registerhandler} Loginhandler={Loginhandler} exportChat={exportChat} shareChat={shareChat} afterLogin={afterLogin} Logouthandler={Logouthandler}/> 
        
          
-                    {showRegister && <Register />}
+                    {showRegister && <Register Loginhandler={Loginhandler} Registerhandler={Registerhandler}/>}
                     {showLogin && <Login />}
                    
           
