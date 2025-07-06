@@ -68,6 +68,7 @@ const LoginOtpGenerator=async ()=>{
      
     }
     catch(error){
+      setOtpLoading(false)
       console.log(error)
     }
 }
@@ -132,6 +133,7 @@ useEffect(()=>{
 
   return (
     <div className='login'>
+      {otpLoading&&<h2>Loading...</h2>}
       <form  onSubmit={UserLogin}>
         <h2>Login</h2>
         <input

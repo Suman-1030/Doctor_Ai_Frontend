@@ -29,12 +29,14 @@ function Register({Loginhandler,Registerhandler}) {
      if(Response.ok){
         setLoading(false)
         alert('Registered successful')
+        Loginhandler()
         console.log("entered Otp",otp)
 }
 
 }
 catch(error){
   console.log(error)
+  setLoading(false)
 }
 
 }
@@ -64,7 +66,9 @@ catch(error){
       }
     }
     else {
+      setLoading(false)
       console.log(error)
+      
     }
     }
     catch(error){
