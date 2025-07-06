@@ -1,73 +1,70 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function Otp({ size = 6, setOtp }) {
   const [inputValues, setInputValues] = useState(() => new Array(size).fill(''));
+  const inputRefs = useRef([]);
 
   useEffect(() => {
-    setOtp(inputValues.join('')); // combine digits and send to parent
+    setOtp(inputValues.join(''));
   }, [inputValues]);
 
-  const Focusnext = (el) => el?.nextElementSibling?.focus();
-  const FocusBack = (el) => el?.previousElementSibling?.focus();
-  const LeftArrow = (el) => el?.previousElementSibling?.focus();
-  const RightArrow = (el) => el?.nextElementSibling?.focus();
+  const handleChange = (e, index) => {
+    const value = e.target.value;
 
-  const Otphandler = (e) => {
-    const key = e.key;
-    const val = Number(key);
-    const idx = Number(e.target.id);
+    if (!/^\d?$/.test(value)) return; // only allow single digit
 
-    if (isNaN(val)) return;
+    const updatedValues = [...inputValues];
+    updatedValues[index] = value;
+    setInputValues(updatedValues);
 
-    setInputValues((prev) => {
-      const newValues = [...prev];
-      newValues[idx] = val.toString();
-      return newValues;
-    });
-
-    Focusnext(e.target);
-  };
-
-  const Backspacehandler = (e) => {
-    if (e.key === 'Backspace') {
-      const idx = Number(e.target.id);
-      setInputValues((prev) => {
-        const newValues = [...prev];
-        newValues[idx] = '';
-        return newValues;
-      });
-      FocusBack(e.target);
+    // Move to next input
+    if (value && index < size - 1) {
+      inputRefs.current[index + 1]?.focus();
     }
   };
 
-  const Arrowfunction = (e) => {
-    if (e.key === 'ArrowLeft') LeftArrow(e.target);
-    if (e.key === 'ArrowRight') RightArrow(e.target);
+  const handleKeyDown = (e, index) => {
+    if (e.key === 'Backspace') {
+      if (inputValues[index] === '') {
+        // Move back if already empty
+        inputRefs.current[index - 1]?.focus();
+      } else {
+        // Clear current digit
+        const updatedValues = [...inputValues];
+        updatedValues[index] = '';
+        setInputValues(updatedValues);
+      }
+    } else if (e.key === 'ArrowLeft') {
+      inputRefs.current[index - 1]?.focus();
+    } else if (e.key === 'ArrowRight') {
+      inputRefs.current[index + 1]?.focus();
+    }
   };
-
-  const onKeyChange = (e) => {
-    Otphandler(e);
-    Backspacehandler(e);
-    Arrowfunction(e);
-  };
-
- 
 
   return (
-    <div className='otp'>
-      <div className='password'>
-        {inputValues.map((value, index) => (
-          <input
-            id={index.toString()}
-            key={index}
-            value={value}
-            maxLength={1}
-            onChange={() => {}}
-            onKeyUp={onKeyChange}
-          />
-        ))}
-      </div>
-      
+    <div className='otp password' style={{ display: 'flex', gap: '10px' }}>
+      {inputValues.map((value, index) => (
+        <input
+          key={index}
+          id={index.toString()}
+          ref={(el) => (inputRefs.current[index] = el)}
+          type='text'
+          inputMode='numeric'
+          pattern='[0-9]*'
+          maxLength={1}
+          value={value}
+          onChange={(e) => handleChange(e, index)}
+          onKeyDown={(e) => handleKeyDown(e, index)}
+          style={{
+            width: '40px',
+            height: '40px',
+            textAlign: 'center',
+            fontSize: '24px',
+            borderRadius: '8px',
+            border: '1px solid #ccc',
+          }}
+        />
+      ))}
     </div>
   );
 }

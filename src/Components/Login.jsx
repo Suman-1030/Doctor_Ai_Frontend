@@ -96,6 +96,7 @@ const LoginOtpVerify=async()=>{
 
    }
    catch(error){
+    setOtpLoading(false)
     console.log(error)
    }
 
